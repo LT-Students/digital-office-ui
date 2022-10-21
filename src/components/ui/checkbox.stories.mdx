@@ -1,0 +1,19 @@
+import { action } from "@storybook/addon-actions";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Checkbox from './checkbox';
+
+<Meta title="Material Checkbox" component={Checkbox}/>
+
+<Preview>
+    <Story name="DefaultOn">
+        <Checkbox disableRipple/>
+    </Story>
+    <Story name="Disabled">
+        <Checkbox disableRipple disabled/>
+    </Story>
+    <Story name="DefaultOff">
+        <Checkbox disableRipple icon={<DisabledByDefaultIcon/>} checkedIcon={<DisabledByDefaultIcon/>}/>
+    </Story>
+</Preview>
+
+<Props of={Checkbox} />
