@@ -58,6 +58,7 @@ export const theme = createTheme({
     },
     blackColors: {
       main: Colors.black300,
+      contrastText: Colors.black_headerText,
     }
   },
 });

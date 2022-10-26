@@ -1,11 +1,9 @@
 import React from "react";
 import MuiButton from "@mui/material/Button";
-import MuiCheckbox from "@mui/material/Checkbox";
 import Stack from "@mui/material/Stack";
-import DisabledByDefaultIcon from "@mui/icons-material/DisabledByDefaultRounded";
-import {DisabledIcon as DIcon} from "./components/ui/checkbox";
+import FormControlLabel from "./components/ui/FormControlLabel"
 
-import { Button, Checkbox, CheckboxError } from "components/ui";
+import { Button, Checkbox, Toggle } from "components/ui";
 
 const App: React.FC = () => {
   return (
@@ -19,11 +17,14 @@ const App: React.FC = () => {
     >
       <MuiButton>Default Button</MuiButton>
       <Button>Custom Button</Button>
-      <MuiCheckbox />
-      <Checkbox disableRipple disabled icon={<DIcon/>}/>
-      <Checkbox disableRipple/>
-      <CheckboxError disableRipple/>
-      <Checkbox disableRipple icon={<DisabledByDefaultIcon/>} checkedIcon={<DisabledByDefaultIcon/>}/>
+      <Checkbox />
+      <FormControlLabel error control={<Checkbox />} label="" />
+      <FormControlLabel control={<Checkbox />} label="Label" />
+      <FormControlLabel error control={<Checkbox />} label="Label" />
+      <Toggle />
+      <Toggle error />
+      <Toggle disabled/>
+      {/* <FormControlLabel error control={<Toggle />} label="" /> */}
     </Stack>
   );
 };
