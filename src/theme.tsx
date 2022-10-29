@@ -1,5 +1,8 @@
 import { createTheme } from "@mui/material/styles";
 
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+
 declare module '@mui/material/styles' {
   interface Palette {
     blackColors: Palette['primary'];
@@ -59,6 +62,14 @@ export const theme = createTheme({
     blackColors: {
       main: Colors.black300,
       contrastText: Colors.black_headerText,
+    }
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        startIcon: <KeyboardArrowLeftIcon/>,
+        endIcon: <KeyboardArrowRightIcon/>,
+      }
     }
   },
 });
