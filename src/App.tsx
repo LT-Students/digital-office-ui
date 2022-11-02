@@ -2,8 +2,11 @@ import React from "react";
 import Stack from "@mui/material/Stack";
 import FormControlLabel from "./components/ui/FormControlLabel";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
+import FormControl from "@material-ui/core/FormControl";
+import { InputAdornment } from "@material-ui/core";
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
-import { Button, Checkbox, Toggle } from "components/ui";
+import { Button, Checkbox, Toggle, Input, InputLabel, HelperText } from "components/ui";
 
 const App: React.FC = () => {
   return (
@@ -70,9 +73,32 @@ const App: React.FC = () => {
           <Button size="small" variant="contained">
             Button
           </Button>
-          <Button variant="contained" size="large" icon startIcon={<AcUnitIcon />} loading> </Button>
-          <Button variant="contained" size="medium" icon startIcon={<AcUnitIcon />}> </Button>
-          <Button variant="contained" size="small" icon startIcon={<AcUnitIcon />} disabled> </Button>
+          <Button
+            variant="contained"
+            size="large"
+            icon
+            startIcon={<AcUnitIcon />}
+            loading
+          >
+            {" "}
+          </Button>
+          <Button
+            variant="contained"
+            size="medium"
+            icon
+            startIcon={<AcUnitIcon />}
+          >
+            {" "}
+          </Button>
+          <Button
+            variant="contained"
+            size="small"
+            icon
+            startIcon={<AcUnitIcon />}
+            disabled
+          >
+            {" "}
+          </Button>
         </Stack>
         <Stack
           spacing={2}
@@ -130,10 +156,57 @@ const App: React.FC = () => {
           <Button size="small" variant="text">
             Button
           </Button>
-          <Button variant="text" size="large" icon startIcon={<AcUnitIcon />} loading> </Button>
-          <Button variant="text" size="medium" icon startIcon={<AcUnitIcon />}> </Button>
-          <Button variant="text" size="small" icon startIcon={<AcUnitIcon />} disabled> </Button>
+          <Button
+            variant="text"
+            size="large"
+            icon
+            startIcon={<AcUnitIcon />}
+            loading
+          >
+            {" "}
+          </Button>
+          <Button variant="text" size="medium" icon startIcon={<AcUnitIcon />}>
+            {" "}
+          </Button>
+          <Button
+            variant="text"
+            size="small"
+            icon
+            startIcon={<AcUnitIcon />}
+            disabled
+          >
+            {" "}
+          </Button>
         </Stack>
+      </Stack>
+      <Stack
+        spacing={2}
+        direction="column"
+        sx={{
+          mt: 2,
+          alignItems: "center",
+        }}
+      >
+        <FormControl error variant="standard">
+          <InputLabel htmlFor="DOinput">
+            Text_Label
+          </InputLabel>
+          <Input
+            defaultValue="Text_Description"
+            id="DOinput"
+            startAdornment={
+              <InputAdornment position="start">
+                <VisibilityIcon />
+              </InputAdornment>
+            }
+            endAdornment={
+              <InputAdornment position="end">
+                <VisibilityIcon />
+              </InputAdornment>
+            }
+          />
+          <HelperText id="DOinput_helper">Text_Description</HelperText>
+        </FormControl>
       </Stack>
     </Stack>
   );
