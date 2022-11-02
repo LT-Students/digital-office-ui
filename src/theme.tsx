@@ -1,18 +1,18 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, experimental_sx as sx, } from "@mui/material/styles";
 
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface Palette {
-    blackColors: Palette['primary'];
+    blackColors: Palette["primary"];
   }
   interface PaletteOptions {
-    blackColors: PaletteOptions['primary'];
+    blackColors: PaletteOptions["primary"];
   }
 }
 
-const Colors ={
+const Colors = {
   //BLACK/WHITE
   black_headerText: "#424242",
   black300: "#E0E0E0",
@@ -43,7 +43,7 @@ export const theme = createTheme({
       main: Colors.primary_mainDetails,
       light: Colors.primary_mainDetails100,
       contrastText: Colors.primary_defaultText,
-    }, 
+    },
     secondary: {
       main: Colors.primary_mainDetails100,
     },
@@ -62,14 +62,22 @@ export const theme = createTheme({
     blackColors: {
       main: Colors.black300,
       contrastText: Colors.black_headerText,
-    }
+    },
   },
   components: {
     MuiButton: {
       defaultProps: {
-        startIcon: <KeyboardArrowLeftIcon/>,
-        endIcon: <KeyboardArrowRightIcon/>,
-      }
-    }
+        startIcon: <KeyboardArrowLeftIcon />,
+        endIcon: <KeyboardArrowRightIcon />,
+      },
   },
+  MuiCircularProgress: {
+    styleOverrides: {
+      svg: sx ({
+        viewBox: "20 20 48 48",
+      }),
+    },
+  },
+},
+
 });
